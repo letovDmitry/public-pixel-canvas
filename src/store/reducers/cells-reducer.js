@@ -3,7 +3,7 @@ const SET_CURRENT_COLOR = 'SET-CURRENT-COLOR'
 
 let initialState = {
     cells: [],
-    currentColor: 'red'
+    currentColor: 'ff0000'
 }
 
 const cellsReducer = (state = initialState, action) => {

@@ -15,7 +15,7 @@ var SET_CELLS = 'SET-CELLS';
 var SET_CURRENT_COLOR = 'SET-CURRENT-COLOR';
 var initialState = {
   cells: [],
-  currentColor: 'red'
+  currentColor: 'ff0000'
 };
 
 var cellsReducer = function cellsReducer() {
