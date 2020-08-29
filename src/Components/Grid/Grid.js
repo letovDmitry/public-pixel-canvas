@@ -1,7 +1,6 @@
 import React from 'react';
 import c from './Grid.module.css'
 import Cell from '../Cells/Cell';
-import { newColor } from '../../api/api';
 import { setCellsAC, setCurrentColorAC } from '../../store/reducers/cells-reducer';
 import { subscribeToCells } from '../../api/api';
 import { connect } from 'react-redux';
@@ -20,7 +19,6 @@ class Grid extends React.Component {
         
     }
     changeCurrentColor = (currentColor) => {
-        console.log(this.props)
         this.props.setCurrentColor(currentColor)
     }
     render () {
