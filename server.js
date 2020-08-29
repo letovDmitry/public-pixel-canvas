@@ -1,9 +1,10 @@
 const { createServer } = require('http')
-const io = require('socket.io')();
+
 const express = require('express');
 const compression = require('compression');
 const morgan = require('morgan')
 const path = require('path')
+const port = process.env.PORT || 8000;
 
 let cells = [];
 
@@ -26,6 +27,15 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 
+
+
+const server = app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
+
+
+
+const io = require('socket.io')(server);
 io.on('connection', (client) => {
     client.on('subscribeToCells', (interval) => {
         setInterval(() => {
@@ -33,11 +43,6 @@ io.on('connection', (client) => {
         }, interval);
     });
 });
+io.listen(server);
+console.log('listening');
 
-const port = 8000;
-io.listen(port);
-console.log('listening on port ', port);
-
-app.listen(5000, () => {
-    console.log(`Example app listening at http://localhost:5000`)
-})
