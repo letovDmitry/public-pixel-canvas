@@ -1,0 +1,14 @@
+.gridWrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    row-gap: 0;
+    column-gap: 0;
+}
+
+.colorPicker {
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+}
