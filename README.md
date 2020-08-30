@@ -1,4 +1,6 @@
 # public-pixel-canvas
+# Live Demo
+See live demo of this app at http://public-canv.herokuapp.com
 # How to set up your local machine #
 
 1. `git clone https://github.com/letovDmitry/public-pixel-canvas.git` to clone the repo
