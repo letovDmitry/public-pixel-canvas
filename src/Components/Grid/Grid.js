@@ -2,7 +2,7 @@ import React from 'react';
 import c from './Grid.module.css'
 import Cell from '../Cells/Cell';
 import { setCellsAC, setCurrentColorAC } from '../../store/reducers/cells-reducer';
-import { subscribeToCells } from '../../api/api';
+import { getCells, changeCells } from '../../api/api';
 import { connect } from 'react-redux';
 import ColorPicker from '../ColorPicker/ColorPicker';
 
@@ -10,13 +10,13 @@ import ColorPicker from '../ColorPicker/ColorPicker';
 class Grid extends React.Component {
     constructor(props) {
         super(props);
-        subscribeToCells((err, cells) => this.props.setCells(cells));
+        getCells((err, cells) => this.props.setCells(cells));
         window.state1 = this.props
     } 
 
     currentColor = this.props.currentColor
-    changeColor = (cell) => {
-        
+    changeColor = (properties) => {
+        changeCells(properties)
     }
     changeCurrentColor = (currentColor) => {
         this.props.setCurrentColor(currentColor)

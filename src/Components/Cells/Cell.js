@@ -8,7 +8,7 @@ export default function Cell (props) {
     }
     
     return (
-        <div onClick={(e) => axios.get(`/colors?color=${props.currentColor}&cell=${props.number}`).then(res => console.log(res.data))} style={cellStyles} className={c.cell}>
+        <div onClick={(e) => props.changeColor({cell: props.number, color:props.currentColor})} style={cellStyles} className={c.cell}>
         </div>
     ) 
     

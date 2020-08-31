@@ -1,10 +1,12 @@
 import openSocket from 'socket.io-client';
 import * as axios from 'axios';
-
-const  socket = openSocket('http://localhost:8000');
-export function subscribeToCells(cb) {
+const socket = openSocket('http://localhost:8000');
+export function getCells(cb) {
   socket.on('cells', timestamp => cb(null, timestamp));
-  socket.emit('subscribeToCells', 1000);
+}
+
+export function changeCells(properties) {
+  socket.emit('subscribeToCells', properties);  
 }
 
 export function newColor(color, cell) {
